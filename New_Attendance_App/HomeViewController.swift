@@ -13,11 +13,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor
     }
 
     @IBAction func goToLoginScreen(_ sender:Any){
         self.performSegue(withIdentifier: "toLoginScreen", sender:self)
+    }
+    
+    @IBAction func goToSignUpScreen(_ sender:Any){
+        self.performSegue(withIdentifier: "toSignUpScreen", sender: self)
     }
     
 
