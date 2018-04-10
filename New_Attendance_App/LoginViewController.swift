@@ -10,6 +10,18 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+
+    
+    @IBAction func goToStudentHome(_ sender:Any){
+        self.performSegue(withIdentifier: "toStudentHomeScreen", sender:self)
+    }
+    
+    @IBAction func goToTeacherHome(_ sender:Any){
+        self.performSegue(withIdentifier: "toTeacherHomeScreen", sender:self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
