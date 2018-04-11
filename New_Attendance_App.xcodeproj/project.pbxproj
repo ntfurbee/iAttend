@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E868087164DE00600BFDC65 /* Pods_New_Attendance_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBCE1A9E52E11117AAA229B /* Pods_New_Attendance_App.framework */; };
 		507164C8207D565300D0E494 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 507164C7207D565300D0E494 /* GoogleService-Info.plist */; };
+		507164CA207D883100D0E494 /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507164C9207D883100D0E494 /* StudentHomeViewController.swift */; };
+		507164CC207D886200D0E494 /* InstructorHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507164CB207D886200D0E494 /* InstructorHomeViewController.swift */; };
 		509A87A9207C1DC6004FC98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A87A8207C1DC6004FC98C /* AppDelegate.swift */; };
 		509A87AB207C1DC6004FC98C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A87AA207C1DC6004FC98C /* ViewController.swift */; };
 		509A87AE207C1DC6004FC98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509A87AC207C1DC6004FC98C /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		33D36C56AAFBE82246AFD65F /* Pods-New_Attendance_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New_Attendance_App.release.xcconfig"; path = "Pods/Target Support Files/Pods-New_Attendance_App/Pods-New_Attendance_App.release.xcconfig"; sourceTree = "<group>"; };
 		507164C7207D565300D0E494 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		507164C9207D883100D0E494 /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
+		507164CB207D886200D0E494 /* InstructorHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorHomeViewController.swift; sourceTree = "<group>"; };
 		509A87A5207C1DC6004FC98C /* New_Attendance_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = New_Attendance_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509A87A8207C1DC6004FC98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		509A87AA207C1DC6004FC98C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 				509A87A8207C1DC6004FC98C /* AppDelegate.swift */,
 				509A87AA207C1DC6004FC98C /* ViewController.swift */,
 				509A87AC207C1DC6004FC98C /* Main.storyboard */,
+				507164CB207D886200D0E494 /* InstructorHomeViewController.swift */,
+				507164C9207D883100D0E494 /* StudentHomeViewController.swift */,
 				507164C7207D565300D0E494 /* GoogleService-Info.plist */,
 				50C023A4207D4665009A8A2D /* SignUpViewController.swift */,
 				509A87BA207C1E74004FC98C /* HomeViewController.swift */,
@@ -241,6 +247,8 @@
 				509A87A9207C1DC6004FC98C /* AppDelegate.swift in Sources */,
 				509A87BB207C1E75004FC98C /* HomeViewController.swift in Sources */,
 				50C023A5207D4665009A8A2D /* SignUpViewController.swift in Sources */,
+				507164CA207D883100D0E494 /* StudentHomeViewController.swift in Sources */,
+				507164CC207D886200D0E494 /* InstructorHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

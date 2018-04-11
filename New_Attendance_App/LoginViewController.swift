@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -15,11 +16,48 @@ class LoginViewController: UIViewController {
 
     
     @IBAction func goToStudentHome(_ sender:Any){
-        self.performSegue(withIdentifier: "toStudentHomeScreen", sender:self)
+        guard let email = emailField.text else { return }
+        guard let pass = passwordField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
+            if error == nil && user != nil {
+                
+                /*
+                 if (user?.email?.contains("mail.wvu.edu"))!{
+                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "InstructorHomeViewController")
+                 
+                 self.present(vc!, animated: true, completion: nil)
+                 
+                 }
+                 
+                 
+                 if (user?.email?.contains("mix.wvu.edu"))!{
+                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentHomeViewController")
+                 
+                 self.present(vc!, animated: true, completion: nil)
+                 }
+                 */
+                
+                self.dismiss(animated: false, completion: nil)
+            } else {
+                print("Error logging in: \(error!.localizedDescription)")
+            }
+            self.performSegue(withIdentifier: "toStudentHomeScreen", sender:self)
+        }
     }
     
     @IBAction func goToTeacherHome(_ sender:Any){
-        self.performSegue(withIdentifier: "toTeacherHomeScreen", sender:self)
+        guard let email = emailField.text else { return }
+        guard let pass = passwordField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
+            if error == nil && user != nil {
+                self.dismiss(animated: false, completion: nil)
+            } else {
+                print("Error logging in: \(error!.localizedDescription)")
+            }
+            self.performSegue(withIdentifier: "toInstructorHomeScreen", sender:self)
+        }
     }
     
     override func viewDidLoad() {

@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJ6-ds-8eO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="598.65067466266873"/>
+            <point key="canvasLocation" x="2801" y="799"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ySh-Wo-uIw">
@@ -161,12 +161,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-bN-fpM">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-bN-fpM" customClass="toStudentHomeScreen">
                                 <rect key="frame" x="16" y="468" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login as Student"/>
                                 <connections>
                                     <action selector="goToStudentHome:" destination="X5r-X0-Mo5" eventType="touchUpInside" id="2lk-z1-zoj"/>
+                                    <segue destination="9gd-QI-YSq" kind="show" identifier="toStudentHomeScreen" id="lSJ-uM-bSe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ot4-Td-SgB">
@@ -175,6 +176,7 @@
                                 <state key="normal" title="Login as Teacher"/>
                                 <connections>
                                     <action selector="goToTeacherHome:" destination="X5r-X0-Mo5" eventType="touchUpInside" id="8BH-4N-E7g"/>
+                                    <segue destination="tNi-a6-G07" kind="show" identifier="toInstructorHomeScreen" id="xMs-7A-m2C"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -188,7 +190,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlL-vN-7jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272.8000000000002" y="-670.61469265367316"/>
+            <point key="canvasLocation" x="2801" y="-340"/>
+        </scene>
+        <!--Instructor Home View Controller-->
+        <scene sceneID="qn6-1q-KvC">
+            <objects>
+                <viewController id="tNi-a6-G07" customClass="InstructorHomeViewController" customModule="New_Attendance_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e6V-Ox-zLM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Itm-Wz-V5S"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5B-VL-OB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3798" y="-12"/>
+        </scene>
+        <!--Student Home View Controller-->
+        <scene sceneID="YsW-f4-KOd">
+            <objects>
+                <viewController id="9gd-QI-YSq" customClass="StudentHomeViewController" customModule="New_Attendance_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VS5-KI-20y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceg-Az-Ua6">
+                                <rect key="frame" x="16" y="149" width="334" height="88"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90F-Sj-hqn">
+                                <rect key="frame" x="145" y="296" width="86" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Attend"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Classes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKw-Zd-6FH">
+                                <rect key="frame" x="143" y="120" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-Lw-qq9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="iAttend" id="Blh-7q-Wde">
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="S2g-EE-rkV"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDX-yE-dCs">
+                                <rect key="frame" x="126" y="258" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="clQ-ev-4s4"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Add Classes" id="sSF-aj-7xg"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWW-e8-W6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3797.5999999999999" y="-816.34182908545733"/>
         </scene>
     </scenes>
 </document>
