@@ -56,6 +56,10 @@ class SignUpViewController: UIViewController {
         self.performSegue(withIdentifier: "toHomeScreen", sender:self)
     }
     
+    @IBAction func backButton(_ sender:Any){
+        self.performSegue(withIdentifier: "backToHome", sender:self)
+    }
+    
     
 
     

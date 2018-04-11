@@ -71,6 +71,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backButton(_ sender:Any){
+        self.performSegue(withIdentifier: "backToHome", sender:self)
+    }
+    
 
     /*
     // MARK: - Navigation
