@@ -7,29 +7,65 @@
 //
 
 import UIKit
+import Firebase
 
-class StudentHomeViewController: UIViewController {
-
+class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var attendanceButton: UIButton!
+    
+    
+    let classes = ["EE 327", "EE 355", "CS 350", "CS 450"]
+    
+    var didAttend = false
+    
     override func viewDidLoad() {
+        pickerView.isHidden = true
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    @IBAction func handleLogout(_ sender: Any) {
+        try! Auth.auth().signOut()
+        self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
+    }
+    
+    
+    @IBAction func attendancePressed(_ sender: UIButton){
+        if pickerView.isHidden{
+            pickerView.isHidden = false
+        }
+        
+        didAttend = true
+    }
+
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    
+    // returns the # of rows in each component..
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return classes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return classes[row]
+    }
+ 
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

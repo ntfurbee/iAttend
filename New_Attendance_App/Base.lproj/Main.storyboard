@@ -271,6 +271,48 @@
             </objects>
             <point key="canvasLocation" x="3798" y="-12"/>
         </scene>
+        <!--Add Class View Controller-->
+        <scene sceneID="FTR-8q-qc5">
+            <objects>
+                <viewController id="yNl-YQ-flU" customClass="AddClassViewController" customModule="New_Attendance_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p3e-Wh-6IA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X6-uH-dxi">
+                                <rect key="frame" x="153" y="446" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Class"/>
+                                <connections>
+                                    <action selector="addClass:" destination="yNl-YQ-flU" eventType="touchUpInside" id="1X3-64-rOH"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UFf-VY-SaT">
+                                <rect key="frame" x="67" y="99" width="240" height="348"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BBQ-FI-iIV"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Back" id="twr-j1-hf5" customClass="backToStudentHome">
+                            <connections>
+                                <action selector="backButton:" destination="yNl-YQ-flU" id="wqz-CB-ip9"/>
+                                <segue destination="9gd-QI-YSq" kind="show" id="G4U-v2-XC7"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="myTableView" destination="UFf-VY-SaT" id="vPi-wp-Kah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3e-a2-krf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3840.8000000000002" y="-1501.7991004497753"/>
+        </scene>
         <!--Student Home View Controller-->
         <scene sceneID="YsW-f4-KOd">
             <objects>
@@ -288,6 +330,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Attend"/>
+                                <connections>
+                                    <action selector="attendancePressed:" destination="9gd-QI-YSq" eventType="touchUpInside" id="0me-Dg-ElN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Classes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKw-Zd-6FH">
                                 <rect key="frame" x="143" y="120" width="88" height="21"/>
@@ -301,7 +346,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="iAttend" id="Blh-7q-Wde">
-                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="S2g-EE-rkV"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Logout" id="S2g-EE-rkV">
+                                            <connections>
+                                                <action selector="handleLogout:" destination="9gd-QI-YSq" id="wVQ-4A-qHl"/>
+                                                <segue destination="5KG-6w-B8h" kind="show" identifier="backToHomeScreen" id="vKl-CP-fX7"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -320,6 +370,10 @@
                         <barButtonItem title="Add Classes" id="sSF-aj-7xg"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="attendanceButton" destination="90F-Sj-hqn" id="73j-lV-2d1"/>
+                        <outlet property="pickerView" destination="ceg-Az-Ua6" id="uDT-xQ-FmW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWW-e8-W6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -330,6 +384,7 @@
         <image name="Screen Shot 2018-03-27 at 9.32.29 PM" width="182" height="246"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PvC-vc-z3t"/>
+        <segue reference="G4U-v2-XC7"/>
+        <segue reference="vKl-CP-fX7"/>
     </inferredMetricsTieBreakers>
 </document>
