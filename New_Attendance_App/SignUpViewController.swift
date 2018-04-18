@@ -8,22 +8,42 @@
 
 import UIKit
 import Firebase
-
+import FirebaseDatabase
 class SignUpViewController: UIViewController {
+    
+    var refUsers: DatabaseReference!
+    
+    
+    
+    
+    
+    
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        refUsers = Database.database().reference().child("users");
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addUser(){
+        let key = refUsers.childByAutoId().key
+        
+        let users = ["id":key,
+                     "username":usernameField.text! as String,
+                     "email":emailField.text! as String,
+                     "password":passwordField.text! as String
+                    ]
     }
     
     @IBAction func submitButton(_ sender:Any){
@@ -33,6 +53,7 @@ class SignUpViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: pass) { user, error in
             if error == nil && user != nil {
+                self.addUser()
                 print("User created!")
                 
                 //Auth.auth().currentUser.
