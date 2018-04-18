@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class InstructorHomeViewController: UIViewController {
 
@@ -21,6 +22,18 @@ class InstructorHomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func handleLogout(_ sender: Any) {
+        try! Auth.auth().signOut()
+        self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
+    }
+    
+    @IBAction func enableAttendance(_ sender: Any){
+        attendanceOpen = true;
+    }
+    
+    @IBAction func disableAttendance(_ sender: Any){
+        attendanceOpen = false;
+    }
 
     /*
     // MARK: - Navigation

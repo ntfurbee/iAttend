@@ -17,23 +17,24 @@ class AddClassViewController: UIViewController, UITableViewDelegate, UITableView
         self.performSegue(withIdentifier: "backToStudentHome", sender: self)
     }
     
-    @IBAction func addClass(_ sender: Any) {
-        
-    }
+
     
     @IBOutlet var myTableView: UITableView!{
         didSet{
             myTableView.dataSource = self
         }
     }
+ 
     var classes = [String]()
     var newClass: String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         classes = ["EE 221", "EE 327"]
+        
+    
     }
 
     override func didReceiveMemoryWarning() {

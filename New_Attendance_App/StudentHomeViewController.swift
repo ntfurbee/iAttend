@@ -19,8 +19,7 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
     var didAttend = false
     
     override func viewDidLoad() {
-        pickerView.isHidden = true
-        
+        pickerView.isHidden = false
         pickerView.delegate = self
         pickerView.dataSource = self
         super.viewDidLoad()
@@ -31,13 +30,18 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
     }
     
+    @IBAction func addClass(_ sender: Any){
+        self.performSegue(withIdentifier: "toAddClass", sender: self)
+    }
     
     @IBAction func attendancePressed(_ sender: UIButton){
         if pickerView.isHidden{
             pickerView.isHidden = false
         }
-        
-        didAttend = true
+        if (attendanceOpen == true){
+            didAttend = true
+            print("MADE IT HERE")
+        }
     }
 
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
