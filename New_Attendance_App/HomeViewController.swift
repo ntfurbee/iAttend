@@ -11,11 +11,12 @@ import UIKit
 import Firebase
 
 
+
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
     }
 
     @IBAction func goToLoginScreen(_ sender:Any){
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
     @IBAction func goToSignUpScreen(_ sender:Any){
         self.performSegue(withIdentifier: "toSignUpScreen", sender: self)
     }
+
     
 
     /*

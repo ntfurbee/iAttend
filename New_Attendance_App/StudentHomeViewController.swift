@@ -23,6 +23,7 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
         pickerView.delegate = self
         pickerView.dataSource = self
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
     }
     
     @IBAction func handleLogout(_ sender: Any) {
