@@ -41,7 +41,11 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         if (attendanceOpen == true){
             didAttend = true
-            print("MADE IT HERE")
+            sendAlert(self, alert: "Success!", message: "Attendance Recorded!");
+            //print("MADE IT HERE")
+        }
+        else{
+            sendAlert(self, alert: "Uh Oh!", message: "Attendance period is not open");
         }
     }
 
@@ -64,11 +68,25 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func sendAlert(_ sender: Any, alert: String, message: String){
+        let alert = UIAlertController(title: alert, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
     
     

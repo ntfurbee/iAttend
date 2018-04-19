@@ -9,8 +9,11 @@
 import UIKit
 import Firebase
 
-class InstructorHomeViewController: UIViewController {
+var alert: UIAlertController!
 
+class InstructorHomeViewController: UIViewController {
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
@@ -29,24 +32,38 @@ class InstructorHomeViewController: UIViewController {
     
     @IBAction func enableAttendance(_ sender: Any){
         attendanceOpen = true;
+        sendAlert(self, message: "Attendance Enabled");
     }
     
     @IBAction func disableAttendance(_ sender: Any){
         attendanceOpen = false;
+        sendAlert(self, message: "Attendance Disabled");
     }
     
     @IBAction func sendToLocation(_ sender: Any){
         self.performSegue(withIdentifier: "toLocation", sender: self)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func sendToReport(_ sender: Any){
+        self.performSegue(withIdentifier: "toAttendanceReport", sender: self)
     }
-    */
+    
+    func sendAlert(_ sender: Any, message: String){
+        let alert = UIAlertController(title: "Success!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
