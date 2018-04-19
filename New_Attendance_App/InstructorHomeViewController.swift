@@ -27,6 +27,8 @@ class InstructorHomeViewController: UIViewController {
     
     @IBAction func handleLogout(_ sender: Any) {
         try! Auth.auth().signOut()
+        mainInstance.currentInstructor?.loggedIn = false
+        mainInstance.currentInstructor = nil
         self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
     }
     
@@ -46,6 +48,10 @@ class InstructorHomeViewController: UIViewController {
 
     @IBAction func sendToReport(_ sender: Any){
         self.performSegue(withIdentifier: "toAttendanceReport", sender: self)
+    }
+    
+    @IBAction func sendToAddClass(_ sender: Any){
+        self.performSegue(withIdentifier: "toInstructorAddClass", sender: self)
     }
     
     func sendAlert(_ sender: Any, message: String){

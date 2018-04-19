@@ -28,6 +28,8 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func handleLogout(_ sender: Any) {
         try! Auth.auth().signOut()
+        mainInstance.currentStudent?.loggedIn = false
+        mainInstance.currentStudent = nil
         self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
     }
     
