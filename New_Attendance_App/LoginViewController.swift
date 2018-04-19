@@ -15,7 +15,46 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var errorMessage: UILabel!
 
-    
+    @IBAction func loginButton(_ sender: Any) {
+        guard let email = emailField.text else { return }
+        guard let pass = passwordField.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
+            if error == nil && user != nil {
+                if email.range(of:"mail") != nil {
+                    dump(mainInstance.instructors)
+                    for i in mainInstance.instructors {
+                        if i.getEmail() == email {
+                            mainInstance.currentInstructor = i
+                            i.loggedIn = true
+                            print("Instructor found from global list with username: ",i.getUsername())
+                        }
+                    }
+                    
+                    self.performSegue(withIdentifier: "toInstructorHomeScreen", sender:self)
+
+                }
+                else {
+                    dump(mainInstance.students)
+                    for i in mainInstance.students {
+                        if i.getEmail() == email {
+                            mainInstance.currentStudent = i
+                            i.loggedIn = true
+                            print("Student found from global list with username: ",i.getUsername())
+                        }
+                    }
+                    
+                    self.performSegue(withIdentifier: "toStudentHomeScreen", sender:self)
+
+                }
+                
+                //self.dismiss(animated: false, completion: nil)
+            } else {
+                print("Error logging in: \(error!.localizedDescription)")
+            }
+        }
+    }
+   /*
     @IBAction func goToStudentHome(_ sender:Any){
         guard let email = emailField.text else { return }
         guard let pass = passwordField.text else { return }
@@ -23,6 +62,13 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: pass) { user, error in
             if error == nil && user != nil {
                 self.dismiss(animated: false, completion: nil)
+                for i in mainInstance.students {
+                    if i.getEmail() == email {
+                        mainInstance.currentStudent = i
+                        i.loggedIn = true
+                        print("Student found from global list with username: ",i.getUsername())
+                    }
+                }
                 
             } else {
                 print("Error logging in: \(error!.localizedDescription)")
@@ -31,7 +77,8 @@ class LoginViewController: UIViewController {
         }
         
     }
-    
+ 
+
     @IBAction func goToTeacherHome(_ sender:Any){
         guard let email = emailField.text else { return }
         guard let pass = passwordField.text else { return }
@@ -39,6 +86,13 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: pass) { user, error in
             if error == nil && user != nil {
                 self.dismiss(animated: false, completion: nil)
+                for i in mainInstance.instructors {
+                    if i.getEmail() == email{
+                        mainInstance.currentInstructor = i
+                        i.loggedIn = true
+                        print("instructor found from global list with properties: \n ",i.getUsername())
+                    }
+                }
                 self.performSegue(withIdentifier: "toInstructorHomeScreen", sender:self)
             }
             else {
@@ -48,6 +102,8 @@ class LoginViewController: UIViewController {
          
         }
     }
+ 
+ */
     
     override func viewDidLoad() {
         super.viewDidLoad()

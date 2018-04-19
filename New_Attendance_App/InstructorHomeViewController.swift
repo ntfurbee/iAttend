@@ -14,6 +14,8 @@ class InstructorHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!)
+        dump(mainInstance.instructors)
+
         // Do any additional setup after loading the view.
     }
 
@@ -24,11 +26,17 @@ class InstructorHomeViewController: UIViewController {
     
     @IBAction func handleLogout(_ sender: Any) {
         try! Auth.auth().signOut()
+        mainInstance.currentInstructor?.loggedIn = false
+        mainInstance.currentInstructor = nil
         self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
     }
     
     @IBAction func enableAttendance(_ sender: Any){
         attendanceOpen = true;
+    }
+    
+    @IBAction func retrieveInstructors(_sender: Any) {
+        dump(mainInstance.instructors)
     }
     
     @IBAction func disableAttendance(_ sender: Any){
@@ -38,7 +46,8 @@ class InstructorHomeViewController: UIViewController {
     @IBAction func sendToLocation(_ sender: Any){
         self.performSegue(withIdentifier: "toLocation", sender: self)
     }
-
+    
+    
     /*
     // MARK: - Navigation
 

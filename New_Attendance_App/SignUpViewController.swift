@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+var instructors = [InstructorModel]()
+var students = [StudentModel]()
 
 class SignUpViewController: UIViewController {
     
@@ -36,6 +38,19 @@ class SignUpViewController: UIViewController {
                 print("User created!")
                 
                 //Auth.auth().currentUser.
+                
+                if email.range(of:"mail") != nil {
+                    let professor = InstructorModel(username: username, email: email, password: pass, attStatus: false, radius: 100)
+                    mainInstance.instructors.append(professor)
+                    print("Successfully created professor with the following attributes: \n")
+                    dump(mainInstance.instructors)
+                }
+                else {
+                    let student = StudentModel(username: username, email: email, password: pass)
+                    mainInstance.students.append(student)
+                    print("Successfully created student with the following attributes: \n")
+                    dump(mainInstance.students)
+                }
                 
                 let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = username

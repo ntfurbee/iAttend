@@ -2,8 +2,8 @@
 //  StudentHomeViewController.swift
 //  New_Attendance_App
 //
-//  Created by Robert Miller on 4/10/18.
-//  Copyright © 2018 Robert Miller. All rights reserved.
+//  Created by Aadel Al-Maamry on 4/10/18.
+//  Copyright © 2018 Aadel Al-Maamry. All rights reserved.
 //
 
 import UIKit
@@ -28,6 +28,8 @@ class StudentHomeViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func handleLogout(_ sender: Any) {
         try! Auth.auth().signOut()
+        mainInstance.currentStudent?.loggedIn = false
+        mainInstance.currentStudent = nil
         self.performSegue(withIdentifier: "backToHomeScreen", sender: self)
     }
     

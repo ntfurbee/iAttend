@@ -21,6 +21,10 @@
 		509A87BD207C20EC004FC98C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A87BC207C20EC004FC98C /* LoginViewController.swift */; };
 		50C023A5207D4665009A8A2D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C023A4207D4665009A8A2D /* SignUpViewController.swift */; };
 		6CC0BCC220878706002E93EA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC0BCC120878706002E93EA /* LocationViewController.swift */; };
+		729F71EB2087CDB900720BB0 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F71EA2087CDB900720BB0 /* SectionModel.swift */; };
+		729F71ED2087D39600720BB0 /* InstructorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F71EC2087D39600720BB0 /* InstructorModel.swift */; };
+		729F71EF2087D5ED00720BB0 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F71EE2087D5ED00720BB0 /* StudentModel.swift */; };
+		729F71F120880C2300720BB0 /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729F71F020880C2300720BB0 /* global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		509A87BC207C20EC004FC98C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		50C023A4207D4665009A8A2D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6CC0BCC120878706002E93EA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		729F71EA2087CDB900720BB0 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
+		729F71EC2087D39600720BB0 /* InstructorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructorModel.swift; sourceTree = "<group>"; };
+		729F71EE2087D5ED00720BB0 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		729F71F020880C2300720BB0 /* global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
 		BDBCE1A9E52E11117AAA229B /* Pods_New_Attendance_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_New_Attendance_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CEE7BE4D94F64A6394A4A8 /* Pods-New_Attendance_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-New_Attendance_App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-New_Attendance_App/Pods-New_Attendance_App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,12 +101,16 @@
 				507164C9207D883100D0E494 /* StudentHomeViewController.swift */,
 				507164C7207D565300D0E494 /* GoogleService-Info.plist */,
 				50C023A4207D4665009A8A2D /* SignUpViewController.swift */,
-				509A87BA207C1E74004FC98C /* HomeViewController.swift */,
 				509A87BC207C20EC004FC98C /* LoginViewController.swift */,
+				509A87BA207C1E74004FC98C /* HomeViewController.swift */,
 				507164CD2085864800D0E494 /* AddClassViewController.swift */,
 				509A87AF207C1DC7004FC98C /* Assets.xcassets */,
 				509A87B1207C1DC7004FC98C /* LaunchScreen.storyboard */,
 				509A87B4207C1DC7004FC98C /* Info.plist */,
+				729F71EA2087CDB900720BB0 /* SectionModel.swift */,
+				729F71EC2087D39600720BB0 /* InstructorModel.swift */,
+				729F71EE2087D5ED00720BB0 /* StudentModel.swift */,
+				729F71F020880C2300720BB0 /* global.swift */,
 			);
 			path = New_Attendance_App;
 			sourceTree = "<group>";
@@ -249,8 +261,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				509A87BD207C20EC004FC98C /* LoginViewController.swift in Sources */,
+				729F71EF2087D5ED00720BB0 /* StudentModel.swift in Sources */,
 				509A87AB207C1DC6004FC98C /* ViewController.swift in Sources */,
 				509A87A9207C1DC6004FC98C /* AppDelegate.swift in Sources */,
+				729F71ED2087D39600720BB0 /* InstructorModel.swift in Sources */,
+				729F71F120880C2300720BB0 /* global.swift in Sources */,
+				729F71EB2087CDB900720BB0 /* SectionModel.swift in Sources */,
 				509A87BB207C1E75004FC98C /* HomeViewController.swift in Sources */,
 				50C023A5207D4665009A8A2D /* SignUpViewController.swift in Sources */,
 				507164CE2085864900D0E494 /* AddClassViewController.swift in Sources */,
